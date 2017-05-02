@@ -32,7 +32,7 @@ public class PiadaController {
                     value="/piada")
     public Piada buscarPiada(){
         Piada p = new Piada();
-
+        p.setNome("teste");
         return p;
     }
   
