@@ -18,13 +18,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class PiadaController {
     
     
-    @CrossOrigin(origins = "http://editor.swagger.io")
+    @CrossOrigin(origins = "http://editor.swagger.io", "http://localhost:8080")
     @RequestMapping(method = RequestMethod.POST,
                     value="/piada")
     public Piada salvarPiada(@RequestBody Piada p){
         PiadaDAO dao = new PiadaDAO();
         Piada piadaSalva = dao.salvar(p);
         return piadaSalva;
+    }
+
+    @CrossOrigin(origins = "http://editor.swagger.io", "http://localhost:8080")
+    @RequestMapping(method = RequestMethod.GET,
+                    value="/piada")
+    public Piada buscarPiada(){
+        Piada p = new Piada();
+
+        return p;
     }
   
     
