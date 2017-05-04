@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PiadaController {
     
     
-    @CrossOrigin(origins = {"http://editor.swagger.io", "http://localhost:8080"})
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.POST,
                     value="/piada")
     public Piada salvarPiada(@RequestBody Piada p){
@@ -32,7 +32,7 @@ public class PiadaController {
   
     
     
-    @CrossOrigin(origins = {"http://editor.swagger.io", "http://localhost:8080"})
+    @CrossOrigin
     @RequestMapping(method=RequestMethod.GET,
                     value="/piada")
     public List<Piada> listarPiadas(@RequestParam(value = "palavra", defaultValue="") String filtro, 
@@ -42,7 +42,7 @@ public class PiadaController {
     }
     
     
-    @CrossOrigin(origins = {"http://editor.swagger.io", "http://localhost:8080"})
+    @CrossOrigin
     @RequestMapping(method=RequestMethod.DELETE,
                     value="/piada/{id}")
     public void deletar(@PathVariable("id")int id){
